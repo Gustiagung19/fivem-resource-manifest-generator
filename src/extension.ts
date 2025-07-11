@@ -22,7 +22,7 @@ game 'gta5'                      -- Target game (gta5, gta4, rdr3)
 -- [[ Resource Metadata ]] --
 name 'gusti-resources-manifest'  -- Resource name
 author 'Gusti Agung'             -- Creator name / developer team
-version '1.0.0'                  -- Resource version
+version '1.1.0'                  -- Resource version
 description 'Description of the resource'  -- Brief explanation of resources
 
 -- [[ Shared Scripts ]] --

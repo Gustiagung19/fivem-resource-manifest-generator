@@ -1,0 +1,40 @@
+{
+    "Generate fxmanifest template": {
+        "prefix": "fxmanifest",
+        "body": [
+            "-- Generate by FiveM Resource Manifest Generator (Gusti Agung)",
+            "",
+            "-- [[ FX Information ]] --",
+            "fx_version 'cerulean'            -- (cerulean, bodacious, adamant, anthrax)",
+            "lua54 'yes'                      -- Enable runtime Lua 5.4",
+            "game 'gta5'                      -- Target game (gta5, gta4, rdr3)",
+            "",
+            "-- [[ Resource Metadata ]] --",
+            "name 'gusti-resources-manifest'  -- Resource name",
+            "author 'Gusti Agung'             -- Creator name / developer team",
+            "version '1.1.0'                  -- Resource version",
+            "description 'Description of the resource'  -- Brief explanation of resources",
+            "",
+            "-- [[ Shared Scripts ]] --",
+            "shared_scripts {",
+            "    -- Example: 'config.lua', 'shared/utils.lua'",
+            "}",
+            "",
+            "-- [[ Server Scripts ]] --",
+            "client_scripts {",
+            "    -- Example: 'client/main.lua', 'client/*.lua'",
+            "}",
+            "",
+            "-- [[ Server Scripts ]] --",
+            "server_scripts {",
+            "    -- Example: 'server/main.lua', 'server/*.lua'",
+            "}",
+            "",
+            "-- [[ Dependencies ]] --",
+            "dependencies {",
+            "    -- Example: 'es_extended', 'qbcore'",
+            "}"
+        ],
+        "description": "Insert fxmanifest.lua boilerplate"
+    }
+}
