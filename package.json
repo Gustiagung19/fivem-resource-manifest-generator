@@ -3,7 +3,7 @@
   "name": "fivem-resource-manifest-generator",
   "displayName": "FiveM Resource Manifest Generator",
   "description": "Generate fxmanifest.lua files for FiveM projects easily",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.102.0"
