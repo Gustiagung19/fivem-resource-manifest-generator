@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/gustiagung19/fivem-resource-manifest-generator/master/banner.png" alt="logo" width="690" height="388">
+  <img src="https://raw.githubusercontent.com/gustiagung19/fivem-resource-manifest-generator/master/banner.png" alt="logo" width="480" height="270">
 
   <h1>FiveM Resource Manifest Generator</h1>
   <p>A fast and simple VS Code extension to generate a ready-to-edit fxmanifest.lua file for your FiveM resource project — instantly and automatically.</p>
