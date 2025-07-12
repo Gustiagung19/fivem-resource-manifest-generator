@@ -1,15 +1,19 @@
 # Change Log
 
-All notable changes to the "fivem-resource-manifest-generator" extension will be documented in this file.
+## v1.1.1
+## 📢 What's New
 
-## 📢 What's New (v1.1.0)
+- ✅ Added workflows release and FUNDING
+- 📘 Updated README fix image banner (change size)
+
+## v1.1.0
+## 📢 What's New
 
 - ✅ Added Lua Snippet Support (`fxmanifest`)
 - 📘 Updated documentation with badges and centered layout
 - 🧼 Minor formatting and metadata enhancements
 
----
-
-## [Released]
+## v1.0.0
+### 🔥 Releases
 
 - 🎉 Initial release
