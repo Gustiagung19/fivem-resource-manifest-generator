@@ -1,0 +1,66 @@
+name: 🚀 Build and Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🛠️ Build Extension
+        run: npx vsce package
+
+      - name: 📝 Extract Changelog
+        id: changelog
+        run: |
+          CURRENT_TAG="${GITHUB_REF#refs/tags/}"
+          PREVIOUS_TAG=$(git tag --sort=-creatordate | grep '^v' | grep -A1 "$CURRENT_TAG" | tail -n1)
+
+          echo "🔖 Current tag: $CURRENT_TAG"
+          echo "🔙 Previous tag: $PREVIOUS_TAG"
+
+          # Get the contents of the changelog (without the version heading)
+          CHANGELOG_BODY=$(sed -n "/^## ${CURRENT_TAG}$/,/^## v/p" CHANGELOG.md | sed '1d;$d')
+
+          # Prepare the final body with the comparison above
+          if [ -n "$PREVIOUS_TAG" ]; then
+            COMPARE_URL="https://github.com/${{ github.repository }}/compare/${PREVIOUS_TAG}...${CURRENT_TAG}"
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            echo "🔍 [Compare Changes](${COMPARE_URL})" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "${CHANGELOG_BODY}" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            echo "${CHANGELOG_BODY}" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: ⬆️ Upload VSIX to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: ${{ steps.changelog.outputs.notes }}
+          files: "*.vsix"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
