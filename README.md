@@ -37,6 +37,30 @@ In any `.lua` file:
 - Type: `fxmanifest`
 - Press `Tab` → A complete fxmanifest.lua template will be inserted automatically
 
+## 📸 Screenshot
+
+<table>
+    <tr>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/gustiagung19/fivem-resource-manifest-generator/master/images/command-palette.png" width="500">
+        </td>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/gustiagung19/fivem-resource-manifest-generator/master/images/snippet.png" width="500">
+        </td>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/gustiagung19/fivem-resource-manifest-generator/master/images/result.png" width="500">
+        </td>
+    </tr>
+</table>
+
+## 🎬 Video Preview
+
+<div>
+    <a href="https://youtu.be/-GCiNBCM-Q4" target="_blank">
+        <img src="https://img.shields.io/badge/YouTube-🎬%20Click%20Here-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=cc0000" alt="YouTube" loading="lazy">
+    </a>
+</div>
+
 <br>
 
 > ⚡ Created by [Gusti Agung](https://github.com/gustiagung19) to speed up FiveM development.
